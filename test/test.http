@@ -1,0 +1,34 @@
+POST http://localhost:4004/odata/v4/portal/Grade
+Content-Type: application/json
+
+{
+  "gradeName" : "E"
+}
+###############
+
+POST http://localhost:4004/odata/v4/portal/Region
+Content-Type: application/json
+
+{
+  "regionName" : "Telangana",
+  "schools" : [
+    {
+      "schoolName" : "Aurobindo Public School",
+      "grades" : [
+        {
+          "gradeName" : "H",
+          "students" : [
+            {
+              "studentName" : "Sai Kiran"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+#############################################################
+
+DELETE http://localhost:4004/odata/v4/portal/Region('0313d9b1-1bf1-4613-8651-5636261454bb')
+#####
+GET http://localhost:4004/odata/v4/portal/Region('bfa4f4cf-5004-4a71-ad05-13a44f8e7542')?$expand=schools($expand=grades)

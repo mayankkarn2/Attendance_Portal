@@ -1,0 +1,48 @@
+
+CREATE TABLE attendance_portal_Region (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  regionName NVARCHAR(15),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE attendance_portal_School (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  schoolName NVARCHAR(30),
+  region_ID NVARCHAR(36),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE attendance_portal_Grade (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  gradeName NVARCHAR(255),
+  school_ID NVARCHAR(36),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE attendance_portal_Student (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  studentName NVARCHAR(5),
+  grade_ID NVARCHAR(36),
+  totalSickLeaves INTEGER DEFAULT 5,
+  totalCasualLeaves INTEGER DEFAULT 10,
+  appliedSickLeaves INTEGER DEFAULT 0,
+  appliedCasualLeaves INTEGER DEFAULT 0,
+  PRIMARY KEY(ID)
+);
+
