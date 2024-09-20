@@ -32,3 +32,10 @@ Content-Type: application/json
 DELETE http://localhost:4004/odata/v4/portal/Region('0313d9b1-1bf1-4613-8651-5636261454bb')
 #####
 GET http://localhost:4004/odata/v4/portal/Region('bfa4f4cf-5004-4a71-ad05-13a44f8e7542')?$expand=schools($expand=grades)
+####
+POST http://localhost:4004/odata/v4/portal/addRegion
+Content-Type: application/json
+
+{
+  "payload" : "AP"
+}
